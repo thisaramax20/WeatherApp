@@ -10,13 +10,146 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="report.html" class="nav-link text-white">Past Reports</a>
+          </li>
+        </ul>
+      </header>
+    </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="row my-3">
+            <div class="col-8">
+              <input
+                id="txt-city-search"
+                class="form-control me-2 bg-transparent border-info text-white"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <button
+                id="btn-search-by-city"
+                class="btn btn-outline-info text-white"
+              >
+                Search by city
+              </button>
+            </div>
+          </div>
+          <div class="row my-4">
+            <p>or</p>
+            <div class="col-8 my-5">
+              <button
+                id="btn-get-location"
+                class="btn btn-outline-info text-light"
+              >
+                Access your location
+              </button>
+            </div>
+          </div>
 
+          <div class="row my-5"></div>
 
+          <div class="row">
+            <img
+              id="icon-main"
+              class="img-fluid h-25 w-25"
+              src="img/cloudy.png"
+              alt=""
+            />
+          </div>
 
+          <div class="row">
+            <div class="col-4">
+              <h1 id="txt-main-temperature" class="fw-bold">20<sup>0</sup></h1>
+            </div>
+
+            <div class="col-6">
+              <div class="row">
+                <h3 id="txt-main-city">Colombo</h3>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <h5 id="txt-time">06:10</h5>
+                </div>
+                <div class="col-8">
+                  <h5 id="txt-date">09.09.2024</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5">
+          <div class="mx-5">
+            <h5 class="mb-5">Weather details...</h5>
+            <h2 class="my-2 fw-bolder" id="txt-short-description">Sunny</h2>
+
+            <div class="row my-3">
+              <div class="col-2"><h4>Temperature</h4></div>
+              <div class="col-6"></div>
+              <div class="col-2">
+                <h4 id="txt-secondary-temperature">20<sup>0</sup></h4>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-2"><h4>Humidity</h4></div>
+              <div class="col-6"></div>
+              <div class="col-2"><h4 id="txt-humidity">20%</h4></div>
+            </div>
+            <div class="row my-3">
+              <div class="col-2"><h4>Wind</h4></div>
+              <div class="col-6"></div>
+              <div class="col-2"><h4 id="txt-wind-speed">20</h4></div>
+            </div>
+
+            <hr />
+
+            <div>
+                <div class="row my-5"></div>
+            </div>
+
+            <div class="row my-3">
+              <div class="row">
+                <div class="col-2"><h4 id="txt-time-after-first-three-hrs">09:10</h4></div>
+                <div class="col-6"></div>
+                <div class="col-2"><h4 id="txt-temperature-after-first-three hrs">20</h4></div>
+              </div>
+              <div class="row">
+                <h4 id="txt-short-description-after-first-three-hrs">Sunny</h4>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="row">
+                <div class="col-2"><h4 id="txt-time-after-second-three-hrs">12:10</h4></div>
+                <div class="col-6"></div>
+                <div class="col-2"><h4 id="txt-temperature-after-second-three-hrs">20</h4></div>
+              </div>
+              <div class="row">
+                <h4 id="txt-short-description-after-second-three-hrs">Sunny</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

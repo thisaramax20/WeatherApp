@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+body{
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    font-family: "Moderustic", sans-serif;
+    color: rgb(206, 220, 232);
+}
+
+#txt-main-temperature{
+    font-size: 100px;
+}
+#txt-main-city{
+    font-size: 40px;
+}
