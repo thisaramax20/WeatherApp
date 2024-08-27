@@ -22,6 +22,12 @@
           <li class="nav-item">
             <a href="report.html" class="nav-link text-white">Past Reports</a>
           </li>
+          <li>
+            <select name="units" id="units">
+              <option value="cel">Celcius,kmph</option>
+              <option value="far">Farenheid,mph</option>
+            </select>
+          </li>
         </ul>
       </header>
     </div>
@@ -68,7 +74,7 @@
             <img
               id="icon-main"
               class="img-fluid h-25 w-25"
-              src="img/cloudy.png"
+              src=""
               alt=""
             />
           </div>
@@ -84,11 +90,8 @@
               </div>
 
               <div class="row">
-                <div class="col-4">
-                  <h5 id="txt-time">06:10</h5>
-                </div>
                 <div class="col-8">
-                  <h5 id="txt-date">09.09.2024</h5>
+                  <h5 id="txt-main-time">06:10</h5>
                 </div>
               </div>
             </div>
@@ -135,7 +138,7 @@
                 <h4 id="txt-short-description-after-first-three-hrs">Sunny</h4>
               </div>
             </div>
-            <div class="row my-3">
+            <div class="row my-5">
               <div class="row">
                 <div class="col-2"><h4 id="txt-time-after-second-three-hrs">12:10</h4></div>
                 <div class="col-6"></div>
