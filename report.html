@@ -38,68 +38,115 @@
       <div class="row">
         <div class="col-4">
           <div class="row">
-            <h2 id="txt-main-city-secondary-form">Colombo</h2>
+            <input
+                id="txt-city-search"
+                class="form-control me-2 bg-transparent border-info text-white"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
           </div>
-          <div class="row my-5"></div>
-          <div class="row my-5"></div>
-          <div class="row my-5"></div>
-          <div class="row my-5"></div>
 
-          <div class="row my-5">
-            <button class="btn border-0 btn-lg text-white text-start">Past few days</button>
+          <div class="row my-3">
+            <div class="col-8">
+              <button
+                id="btn-search-by-city"
+                class="btn btn-outline-info text-white"
+              >
+                Search by city
+              </button>
+            </div>
           </div>
-          <div class="row my-5">
-            <button class="btn border-0 btn-lg text-white text-start">Past few months</button>
+
+          <div class="row my-4">
+            <p>or</p>
+            <div class="col-8 my-5">
+              <button
+                id="btn-get-location"
+                class="btn btn-outline-info text-light"
+              >
+                Access your location
+              </button>
+            </div>
           </div>
-          <div class="row my-5">
-            <button class="btn border-0 btn-lg text-white text-start">Past few years</button>
+
+          <div class="row">
+            <div class="col-2">
+              <button id="btn-future" class="btn btn-sm btn-outline-info text-white">Forecast</button>
+            </div>
+            <div class="col-4 mx-2">
+              <button id="btn-past" class="btn btn-sm btn-outline-info text-white">Past records</button>
+            </div>
           </div>
+          
+          
+          <div id="past">
+            <div class="row my-5">
+              <button id="btn-past-days" class="btn border-0 btn-lg text-white text-start">Past few days</button>
+            </div>
+            <div class="row my-5">
+              <button id="btn-past-months" class="btn border-0 btn-lg text-white text-start">Past few months</button>
+            </div>
+          </div>
+
+
+          <div id="future">
+            <div class="row my-5">
+              <button id="btn-future-days" class="btn border-0 btn-lg text-white text-start">Next few days</button>
+            </div>
+            <div class="row my-5">
+              <button id="btn-future-months" class="btn border-0 btn-lg text-white text-start">Next few months</button>
+            </div>
+          </div>
+
+          
         </div>
 
         <div class="col-2"></div>
         <div class="col-6">
 
           <div class="row mt-5">
+            <h4 id="txt-main-city"></h4>
             <div class="col-6">
               <h5>Weather details</h5>
-              <h3>2020.09.09</h3>
+              <h3 id="date1">2020.09.09</h3>
               <div class="row my-3">
                 <div class="col-2"><h4>Temperature</h4></div>
                 <div class="col-6"></div>
                 <div class="col-2">
-                  <h4 id="txt-secondary-temperature">20<sup>0</sup></h4>
+                  <h4 id="txt-secondary-temperature1">20<sup>0</sup></h4>
                 </div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Humidity</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-humidity">20%</h4></div>
+                <div class="col-2"><h4 id="txt-humidity1">20%</h4></div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Wind</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-wind-speed">20</h4></div>
+                <div class="col-2"><h4 id="txt-wind-speed1">20</h4></div>
               </div>
             </div>
             <div class="col-6">
               <h5>Weather details</h5>
-              <h3>2020.09.09</h3>
+              <h3 id="date2">2020.09.09</h3>
               <div class="row my-3">
                 <div class="col-2"><h4>Temperature</h4></div>
                 <div class="col-6"></div>
                 <div class="col-2">
-                  <h4 id="txt-secondary-temperature">20<sup>0</sup></h4>
+                  <h4 id="txt-secondary-temperature2">20<sup>0</sup></h4>
                 </div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Humidity</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-humidity">20%</h4></div>
+                <div class="col-2"><h4 id="txt-humidity2">20%</h4></div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Wind</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-wind-speed">20</h4></div>
+                <div class="col-2"><h4 id="txt-wind-speed2">20</h4></div>
               </div>
             </div>
           </div>
@@ -107,44 +154,44 @@
           <div class="row mt-5">
             <div class="col-6">
               <h5>Weather details</h5>
-              <h3>2020.09.09</h3>
+              <h3 id="date3">2020.09.09</h3>
               <div class="row my-3">
                 <div class="col-2"><h4>Temperature</h4></div>
                 <div class="col-6"></div>
                 <div class="col-2">
-                  <h4 id="txt-secondary-temperature">20<sup>0</sup></h4>
+                  <h4 id="txt-secondary-temperature3">20<sup>0</sup></h4>
                 </div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Humidity</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-humidity">20%</h4></div>
+                <div class="col-2"><h4 id="txt-humidity3">20%</h4></div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Wind</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-wind-speed">20</h4></div>
+                <div class="col-2"><h4 id="txt-wind-speed3">20</h4></div>
               </div>
             </div>
             <div class="col-6">
               <h5>Weather details</h5>
-              <h3>2020.09.09</h3>
+              <h3 id="date4">2020.09.09</h3>
               <div class="row my-3">
                 <div class="col-2"><h4>Temperature</h4></div>
                 <div class="col-6"></div>
                 <div class="col-2">
-                  <h4 id="txt-secondary-temperature">20<sup>0</sup></h4>
+                  <h4 id="txt-secondary-temperature4">20<sup>0</sup></h4>
                 </div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Humidity</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-humidity">20%</h4></div>
+                <div class="col-2"><h4 id="txt-humidity4">20%</h4></div>
               </div>
               <div class="row my-3">
                 <div class="col-2"><h4>Wind</h4></div>
                 <div class="col-6"></div>
-                <div class="col-2"><h4 id="txt-wind-speed">20</h4></div>
+                <div class="col-2"><h4 id="txt-wind-speed4">20</h4></div>
               </div>
             </div>
           </div>

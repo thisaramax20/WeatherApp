@@ -66,7 +66,7 @@ const loadData = () => {
   }
 };
 
-btnSearchByLocation.addEventListener("click", () => loadData);
+btnSearchByLocation.addEventListener("click", () => loadData());
 
 const success = (position) => {
   const { latitude, longitude } = position.coords;
@@ -130,7 +130,7 @@ const getWeatherNow = (
     .then((res) => res.json())
     .then((data) => fillData(data, condition1, condition2))
     .catch((rej) =>
-      condition
+      condition2
         ? alert("Please enter a valid input...")
         : alert("Seems to be a connection issue... Try reloading...")
     );

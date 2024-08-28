@@ -17,3 +17,6 @@ body{
 #txt-main-city{
     font-size: 40px;
 }
+#past,#future{
+    display: none;
+}
