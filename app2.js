@@ -95,19 +95,19 @@ const success = (position) => {
       txtMainCity.innerText = currentCity;
       if (isFutureDays) {
         getFutureDaysWeather(latitude, longitude, "");
-        txtMainCity.innerText +="- For future days";
+        txtMainCity.innerText += "- For future days";
       }
       if (isFutureMonths) {
         getFutureMonthsWeather(latitude, longitude, "");
-        txtMainCity.innerText +="- For future months";
+        txtMainCity.innerText += "- For future months";
       }
       if (isPastMonths) {
         getPastMonthsWeather(latitude, longitude, "");
-        txtMainCity.innerText +="- For past months";
+        txtMainCity.innerText += "- For past months";
       }
       if (isPastdays) {
         getPastDaysWeather(latitude, longitude, "");
-        txtMainCity.innerText +="- For past days";
+        txtMainCity.innerText += "- For past days";
       }
     })
     .catch((err) => console.log(err));
@@ -119,8 +119,8 @@ const error = (position) =>
 const getFutureDaysWeather = (latitude = "", longitude = "", city = "") => {
   const url =
     city === ""
-      ? `http://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&days=5&aqi=no&alerts=no`
-      : `http://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${city}&days=5&aqi=no&alerts=no`;
+      ? `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&days=5&aqi=no&alerts=no`
+      : `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${city}&days=5&aqi=no&alerts=no`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -188,8 +188,8 @@ const getFutureMonthsWeather = (latitude, longitude, city) => {
 
   const url1 =
     city === ""
-      ? `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
+      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
+      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
   fetch(url1)
     .then((res) => res.json())
     .then((data) => {
@@ -198,8 +198,8 @@ const getFutureMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url2 =
     city === ""
-      ? `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
+      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
+      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
   fetch(url2)
     .then((res) => res.json())
     .then((data) => {
@@ -208,8 +208,8 @@ const getFutureMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url3 =
     city === ""
-      ? `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
+      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
+      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
   fetch(url3)
     .then((res) => res.json())
     .then((data) => {
@@ -218,8 +218,8 @@ const getFutureMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url4 =
     city === ""
-      ? `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `http://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
+      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
+      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
   fetch(url4)
     .then((res) => res.json())
     .then((data) => {
@@ -263,8 +263,8 @@ const getPastMonthsWeather = (latitude, longitude, city) => {
 
   const url1 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
   fetch(url1)
     .then((res) => res.json())
     .then((data) => {
@@ -273,8 +273,8 @@ const getPastMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url2 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
   fetch(url2)
     .then((res) => res.json())
     .then((data) => {
@@ -283,8 +283,8 @@ const getPastMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url3 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
   fetch(url3)
     .then((res) => res.json())
     .then((data) => {
@@ -293,8 +293,8 @@ const getPastMonthsWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url4 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
   fetch(url4)
     .then((res) => res.json())
     .then((data) => {
@@ -411,8 +411,8 @@ const getPastDaysWeather = (latitude, longitude, city) => {
 
   const url1 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
   fetch(url1)
     .then((res) => res.json())
     .then((data) => {
@@ -421,8 +421,8 @@ const getPastDaysWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url2 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
   fetch(url2)
     .then((res) => res.json())
     .then((data) => {
@@ -431,8 +431,8 @@ const getPastDaysWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url3 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
   fetch(url3)
     .then((res) => res.json())
     .then((data) => {
@@ -441,8 +441,8 @@ const getPastDaysWeather = (latitude, longitude, city) => {
     .catch((rej) => console.log(rej));
   const url4 =
     city === ""
-      ? `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `http://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
+      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
+      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
   fetch(url4)
     .then((res) => res.json())
     .then((data) => {
@@ -530,22 +530,23 @@ btnSearchByCity.addEventListener("click", () => {
     return;
   } else {
     currentCity = searchCity.value;
-    txtMainCity.innerText = currentCity.charAt(0).toUpperCase()+currentCity.slice(1);
+    txtMainCity.innerText =
+      currentCity.charAt(0).toUpperCase() + currentCity.slice(1);
     if (isFutureDays) {
       getFutureDaysWeather("", "", currentCity);
-      txtMainCity.innerText +="- For future days";
+      txtMainCity.innerText += "- For future days";
     }
     if (isFutureMonths) {
       getFutureMonthsWeather("", "", currentCity);
-      txtMainCity.innerText +="- For future months";
+      txtMainCity.innerText += "- For future months";
     }
     if (isPastMonths) {
       getPastMonthsWeather("", "", currentCity);
-      txtMainCity.innerText +="- For past months";
+      txtMainCity.innerText += "- For past months";
     }
     if (isPastdays) {
       getPastDaysWeather("", "", currentCity);
-      txtMainCity.innerText +="- For past days"
+      txtMainCity.innerText += "- For past days";
     }
   }
 });
@@ -556,22 +557,23 @@ searchCity.addEventListener("keyup", (key) => {
       return;
     } else {
       currentCity = searchCity.value;
-      txtMainCity.innerText = currentCity.charAt(0).toUpperCase()+currentCity.slice(1);
+      txtMainCity.innerText =
+        currentCity.charAt(0).toUpperCase() + currentCity.slice(1);
       if (isFutureDays) {
         getFutureDaysWeather("", "", currentCity);
-        txtMainCity.innerText +="- For future days";
+        txtMainCity.innerText += "- For future days";
       }
       if (isFutureMonths) {
         getFutureMonthsWeather("", "", currentCity);
-        txtMainCity.innerText +="- For future months";
+        txtMainCity.innerText += "- For future months";
       }
       if (isPastMonths) {
         getPastMonthsWeather("", "", currentCity);
-        txtMainCity.innerText +="- For past months";
+        txtMainCity.innerText += "- For past months";
       }
       if (isPastdays) {
         getPastDaysWeather("", "", currentCity);
-        txtMainCity.innerText +="- For past days"
+        txtMainCity.innerText += "- For past days";
       }
     }
   } else {
