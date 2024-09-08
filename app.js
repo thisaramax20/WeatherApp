@@ -124,8 +124,8 @@ const getWeatherNow = (
 ) => {
   const url =
     city === ""
-      ? `http://api.weatherapi.com/v1/current.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&aqi=no`
-      : `http://api.weatherapi.com/v1/current.json?key=b95153893d2f41028ae105558242608&q=${city}&aqi=no`;
+      ? `https://api.weatherapi.com/v1/current.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&aqi=no`
+      : `https://api.weatherapi.com/v1/current.json?key=b95153893d2f41028ae105558242608&q=${city}&aqi=no`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => fillData(data, condition1, condition2))
@@ -139,8 +139,8 @@ const getWeatherNow = (
 const getWeatherNextThreeHrs = (latitude = "", longitude = "", city = "") => {
   const url =
     city === ""
-      ? `http://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&days=1&aqi=no&alerts=no`
-      : `http://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${city}&days=1&aqi=no&alerts=no`;
+      ? `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&days=1&aqi=no&alerts=no`
+      : `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${city}&days=1&aqi=no&alerts=no`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
