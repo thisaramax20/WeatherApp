@@ -119,8 +119,8 @@ const error = (position) =>
 const getFutureDaysWeather = (latitude = "", longitude = "", city = "") => {
   const url =
     city === ""
-      ? `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&days=5&aqi=no&alerts=no`
-      : `https://api.weatherapi.com/v1/forecast.json?key=b95153893d2f41028ae105558242608&q=${city}&days=5&aqi=no&alerts=no`;
+      ? `https://api.weatherapi.com/v1/forecast.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&days=5&aqi=no&alerts=no`
+      : `https://api.weatherapi.com/v1/forecast.json?key=e667369cab444fd791725742240210&q=${city}&days=5&aqi=no&alerts=no`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -128,18 +128,18 @@ const getFutureDaysWeather = (latitude = "", longitude = "", city = "") => {
       currentTempF1 = data.forecast.forecastday[1].day.avgtemp_f;
       currentTempC2 = data.forecast.forecastday[2].day.avgtemp_c;
       currentTempF1 = data.forecast.forecastday[2].day.avgtemp_f;
-      currentTempC3 = data.forecast.forecastday[3].day.avgtemp_c;
-      currentTempF3 = data.forecast.forecastday[3].day.avgtemp_c;
-      currentTempC4 = data.forecast.forecastday[4].day.avgtemp_c;
-      currentTempF4 = data.forecast.forecastday[4].day.avgtemp_c;
+      // currentTempC3 = data.forecast.forecastday[3].day.avgtemp_c;
+      // currentTempF3 = data.forecast.forecastday[3].day.avgtemp_c;
+      // currentTempC4 = data.forecast.forecastday[4].day.avgtemp_c;
+      // currentTempF4 = data.forecast.forecastday[4].day.avgtemp_c;
       currentWindKmph1 = data.forecast.forecastday[1].day.maxwind_kph;
       currentWindKmph2 = data.forecast.forecastday[2].day.maxwind_kph;
-      currentWindKmph3 = data.forecast.forecastday[3].day.maxwind_kph;
-      currentWindKmph4 = data.forecast.forecastday[4].day.maxwind_kph;
+      // currentWindKmph3 = data.forecast.forecastday[3].day.maxwind_kph;
+      // currentWindKmph4 = data.forecast.forecastday[4].day.maxwind_kph;
       currentWindMph1 = data.forecast.forecastday[1].day.maxwind_mph;
       currentWindMph2 = data.forecast.forecastday[2].day.maxwind_mph;
-      currentWindMph3 = data.forecast.forecastday[3].day.maxwind_mph;
-      currentWindMph4 = data.forecast.forecastday[4].day.maxwind_mph;
+      // currentWindMph3 = data.forecast.forecastday[3].day.maxwind_mph;
+      // currentWindMph4 = data.forecast.forecastday[4].day.maxwind_mph;
       txtDate1.innerText = data.forecast.forecastday[1].date;
       txtSecondaryTemperature1.innerHTML = currentTempC1 + "<sup>0</sup>c";
       txtHumidity1.innerHTML = data.forecast.forecastday[0].day.avghumidity;
@@ -148,358 +148,366 @@ const getFutureDaysWeather = (latitude = "", longitude = "", city = "") => {
       txtSecondaryTemperature2.innerHTML = currentTempC2 + "<sup>0</sup>c";
       txtHumidity2.innerHTML = data.forecast.forecastday[2].day.avghumidity;
       txtWindSpeed2.innerHTML = currentWindKmph2 + "<br/>kmph";
-      txtDate3.innerText = data.forecast.forecastday[3].date;
+      //txtDate3.innerText = data.forecast.forecastday[3].date;
       txtSecondaryTemperature3.innerHTML = currentTempC3 + "<sup>0</sup>c";
-      txtHumidity3.innerHTML = data.forecast.forecastday[3].day.avghumidity;
+      //txtHumidity3.innerHTML = data.forecast.forecastday[3].day.avghumidity;
       txtWindSpeed3.innerHTML = currentWindKmph3 + "<br/>kmph";
-      txtDate4.innerText = data.forecast.forecastday[4].date;
+      //txtDate4.innerText = data.forecast.forecastday[4].date;
       txtSecondaryTemperature4.innerHTML = currentTempC4 + "<sup>0</sup>c";
-      txtHumidity4.innerHTML = data.forecast.forecastday[4].day.avghumidity;
+      //txtHumidity4.innerHTML = data.forecast.forecastday[4].day.avghumidity;
       txtWindSpeed4.innerHTML = currentWindKmph4 + "<br/>kmph";
     })
     .catch((rej) => console.log(rej));
 };
 
-const getFutureMonthsWeather = (latitude, longitude, city) => {
-  const nowMonth = new Date().getMonth();
-  const nowYear = new Date().getFullYear();
+//API KEY limited
+// const getFutureMonthsWeather = (latitude, longitude, city) => {
+//   const nowMonth = new Date().getMonth();
+//   const nowYear = new Date().getFullYear();
 
-  let next1 = "";
-  let next2 = "";
-  let next3 = "";
-  let next4 = "";
+//   let next1 = "";
+//   let next2 = "";
+//   let next3 = "";
+//   let next4 = "";
 
-  next1 +=
-    nowMonth + 3 < 10
-      ? nowYear + "-0" + (nowMonth + 3) + "-01"
-      : nowYear + 1 + "-01-01";
-  next2 +=
-    nowMonth + 4 < 10
-      ? nowYear + "-0" + nowMonth + 4 + "-01"
-      : nowYear + 1 + "-02-01";
-  next3 +=
-    nowMonth + 5 < 10
-      ? nowYear + "-0" + nowMonth + 5 + "-01"
-      : nowYear + 1 + "-03-01";
-  next4 +=
-    nowMonth + 6 < 10
-      ? nowYear + "-0" + nowMonth + 6 + "-01"
-      : nowYear + 1 + "-04-01";
+//   next1 +=
+//     nowMonth + 3 < 10
+//       ? nowYear + "-0" + (nowMonth + 3) + "-01"
+//       : nowYear + 1 + "-01-01";
+//   next2 +=
+//     nowMonth + 4 < 10
+//       ? nowYear + "-0" + nowMonth + 4 + "-01"
+//       : nowYear + 1 + "-02-01";
+//   next3 +=
+//     nowMonth + 5 < 10
+//       ? nowYear + "-0" + nowMonth + 5 + "-01"
+//       : nowYear + 1 + "-03-01";
+//   next4 +=
+//     nowMonth + 6 < 10
+//       ? nowYear + "-0" + nowMonth + 6 + "-01"
+//       : nowYear + 1 + "-04-01";
 
-  const url1 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
-  fetch(url1)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFirstContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url2 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
-  fetch(url2)
-    .then((res) => res.json())
-    .then((data) => {
-      loadSecondContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url3 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
-  fetch(url3)
-    .then((res) => res.json())
-    .then((data) => {
-      loadThirdContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url4 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `https://api.weatherapi.com/v1/future.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
-  fetch(url4)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFourthContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-};
-const getPastMonthsWeather = (latitude, longitude, city) => {
-  const nowMonth = new Date().getMonth();
-  const nowYear = new Date().getFullYear();
+//   const url1 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next1}`
+//       : `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next1}`;
+//   fetch(url1)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
 
-  let next1 = "";
-  let next2 = "";
-  let next3 = "";
-  let next4 = "";
+//       loadFirstContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url2 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next2}`
+//       : `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next2}`;
+//   fetch(url2)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadSecondContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url3 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next3}`
+//       : `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next3}`;
+//   fetch(url3)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadThirdContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url4 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next4}`
+//       : `https://api.weatherapi.com/v1/future.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next4}`;
+//   fetch(url4)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadFourthContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+// };
 
-  next1 +=
-    nowMonth - 1 <= 0
-      ? nowYear - 1 + "-12" + "-01"
-      : nowMonth - 1 < 10
-      ? nowYear + "-0" + (nowMonth - 1) + "-01"
-      : nowYear + "-" + nowMonth - 1 + "-01";
-  next2 +=
-    nowMonth - 2 <= 0
-      ? nowYear - 1 + "-11" + "-01"
-      : nowMonth - 2 < 10
-      ? nowYear + "-0" + (nowMonth - 2) + "-01"
-      : nowYear + "-" + nowMonth - 2 + "-01";
-  next3 +=
-    nowMonth - 3 <= 0
-      ? nowYear - 1 + "-10" + "-01"
-      : nowMonth - 3 < 10
-      ? nowYear + "-0" + (nowMonth - 3) + "-01"
-      : nowYear + "-" + nowMonth - 3 + "-01";
-  next4 +=
-    nowMonth - 4 <= 0
-      ? nowYear - 1 + "-09" + "-01"
-      : nowMonth - 4 < 10
-      ? nowYear + "-0" + (nowMonth - 4) + "-01"
-      : nowYear + "-" + nowMonth - 4 + "-01";
+//API KEY limited
+// const getPastMonthsWeather = (latitude, longitude, city) => {
+//   const nowMonth = new Date().getMonth();
+//   const nowYear = new Date().getFullYear();
 
-  const url1 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
-  fetch(url1)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFirstContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url2 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
-  fetch(url2)
-    .then((res) => res.json())
-    .then((data) => {
-      loadSecondContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url3 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
-  fetch(url3)
-    .then((res) => res.json())
-    .then((data) => {
-      loadThirdContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url4 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
-  fetch(url4)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFourthContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-};
+//   let next1 = "";
+//   let next2 = "";
+//   let next3 = "";
+//   let next4 = "";
 
-const getPastDaysWeather = (latitude, longitude, city) => {
-  const nowMonth = new Date().getMonth();
-  const nowYear = new Date().getFullYear();
-  const nowDay = new Date().getDate();
+//   next1 +=
+//     nowMonth - 1 <= 0
+//       ? nowYear - 1 + "-12" + "-01"
+//       : nowMonth - 1 < 10
+//       ? nowYear + "-0" + (nowMonth - 1) + "-01"
+//       : nowYear + "-" + nowMonth - 1 + "-01";
+//   next2 +=
+//     nowMonth - 2 <= 0
+//       ? nowYear - 1 + "-11" + "-01"
+//       : nowMonth - 2 < 10
+//       ? nowYear + "-0" + (nowMonth - 2) + "-01"
+//       : nowYear + "-" + nowMonth - 2 + "-01";
+//   next3 +=
+//     nowMonth - 3 <= 0
+//       ? nowYear - 1 + "-10" + "-01"
+//       : nowMonth - 3 < 10
+//       ? nowYear + "-0" + (nowMonth - 3) + "-01"
+//       : nowYear + "-" + nowMonth - 3 + "-01";
+//   next4 +=
+//     nowMonth - 4 <= 0
+//       ? nowYear - 1 + "-09" + "-01"
+//       : nowMonth - 4 < 10
+//       ? nowYear + "-0" + (nowMonth - 4) + "-01"
+//       : nowYear + "-" + nowMonth - 4 + "-01";
 
-  let next1 = "";
-  let next2 = "";
-  let next3 = "";
-  let next4 = "";
+//   const url1 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next1}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next1}`;
+//   fetch(url1)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadFirstContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url2 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next2}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next2}`;
+//   fetch(url2)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadSecondContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url3 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next3}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next3}`;
+//   fetch(url3)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadThirdContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url4 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next4}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next4}`;
+//   fetch(url4)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadFourthContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+// };
 
-  if (nowDay - 1 <= 0) {
-    if (nowMonth - 1 < 10) {
-      next1 += nowYear + "-0" + (nowMonth - 1) + "-28";
-    } else {
-      next1 += nowYear + "-" + (nowMonth - 1) + "-28";
-    }
-  } else {
-    if (nowMonth - 1 < 10) {
-      next1 += nowYear + "-0" + (nowMonth - 1);
-      if (nowDay < 10) {
-        next1 += "-0" + (nowDay - 1);
-      } else {
-        next1 += "-" + (nowDay - 1);
-      }
-    } else {
-      next1 += nowYear + "-" + (nowMonth - 10);
-      if (nowDay < 10) {
-        next1 += "-0" + (nowDay - 1);
-      } else {
-        next1 += "-" + (nowDay - 1);
-      }
-    }
-  }
+//API KEY limited
+// const getPastDaysWeather = (latitude, longitude, city) => {
+//   const nowMonth = new Date().getMonth();
+//   const nowYear = new Date().getFullYear();
+//   const nowDay = new Date().getDate();
 
-  if (nowDay - 2 <= 0) {
-    if (nowMonth - 1 < 10) {
-      next2 += nowYear + "-0" + (nowMonth - 1) + "-28";
-    } else {
-      next2 += nowYear + "-" + (nowMonth - 1) + "-28";
-    }
-  } else {
-    if (nowMonth - 1 < 10) {
-      next2 += nowYear + "-0" + (nowMonth - 1);
-      if (nowDay < 10) {
-        next2 += "-0" + (nowDay - 2);
-      } else {
-        next2 += "-" + (nowDay - 2);
-      }
-    } else {
-      next2 += nowYear + "-" + (nowMonth - 10);
-      if (nowDay < 10) {
-        next2 += "-0" + (nowDay - 2);
-      } else {
-        next2 += "-" + (nowDay - 2);
-      }
-    }
-  }
+//   let next1 = "";
+//   let next2 = "";
+//   let next3 = "";
+//   let next4 = "";
 
-  if (nowDay - 3 <= 0) {
-    if (nowMonth - 1 < 10) {
-      next3 += nowYear + "-0" + (nowMonth - 1) + "-28";
-    } else {
-      next3 += nowYear + "-" + (nowMonth - 1) + "-28";
-    }
-  } else {
-    if (nowMonth - 1 < 10) {
-      next3 += nowYear + "-0" + (nowMonth - 1);
-      if (nowDay < 10) {
-        next3 += "-0" + (nowDay - 3);
-      } else {
-        next3 += "-" + (nowDay - 3);
-      }
-    } else {
-      next3 += nowYear + "-" + (nowMonth - 10);
-      if (nowDay < 10) {
-        next3 += "-0" + (nowDay - 3);
-      } else {
-        next3 += "-" + (nowDay - 3);
-      }
-    }
-  }
+//   if (nowDay - 1 <= 0) {
+//     if (nowMonth - 1 < 10) {
+//       next1 += nowYear + "-0" + (nowMonth - 1) + "-28";
+//     } else {
+//       next1 += nowYear + "-" + (nowMonth - 1) + "-28";
+//     }
+//   } else {
+//     if (nowMonth - 1 < 10) {
+//       next1 += nowYear + "-0" + (nowMonth - 1);
+//       if (nowDay < 10) {
+//         next1 += "-0" + (nowDay - 1);
+//       } else {
+//         next1 += "-" + (nowDay - 1);
+//       }
+//     } else {
+//       next1 += nowYear + "-" + (nowMonth - 10);
+//       if (nowDay < 10) {
+//         next1 += "-0" + (nowDay - 1);
+//       } else {
+//         next1 += "-" + (nowDay - 1);
+//       }
+//     }
+//   }
 
-  if (nowDay - 4 <= 0) {
-    if (nowMonth - 1 < 10) {
-      next4 += nowYear + "-0" + (nowMonth - 1) + "-28";
-    } else {
-      next4 += nowYear + "-" + (nowMonth - 1) + "-28";
-    }
-  } else {
-    if (nowMonth - 1 < 10) {
-      next4 += nowYear + "-0" + (nowMonth - 1);
-      if (nowDay < 10) {
-        next4 += "-0" + (nowDay - 4);
-      } else {
-        next4 += "-" + (nowDay - 4);
-      }
-    } else {
-      next4 += nowYear + "-" + (nowMonth - 10);
-      if (nowDay < 10) {
-        next4 += "-0" + (nowDay - 4);
-      } else {
-        next4 += "-" + (nowDay - 4);
-      }
-    }
-  }
+//   if (nowDay - 2 <= 0) {
+//     if (nowMonth - 1 < 10) {
+//       next2 += nowYear + "-0" + (nowMonth - 1) + "-28";
+//     } else {
+//       next2 += nowYear + "-" + (nowMonth - 1) + "-28";
+//     }
+//   } else {
+//     if (nowMonth - 1 < 10) {
+//       next2 += nowYear + "-0" + (nowMonth - 1);
+//       if (nowDay < 10) {
+//         next2 += "-0" + (nowDay - 2);
+//       } else {
+//         next2 += "-" + (nowDay - 2);
+//       }
+//     } else {
+//       next2 += nowYear + "-" + (nowMonth - 10);
+//       if (nowDay < 10) {
+//         next2 += "-0" + (nowDay - 2);
+//       } else {
+//         next2 += "-" + (nowDay - 2);
+//       }
+//     }
+//   }
 
-  const url1 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next1}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next1}`;
-  fetch(url1)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFirstContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url2 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next2}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next2}`;
-  fetch(url2)
-    .then((res) => res.json())
-    .then((data) => {
-      loadSecondContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url3 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next3}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next3}`;
-  fetch(url3)
-    .then((res) => res.json())
-    .then((data) => {
-      loadThirdContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-  const url4 =
-    city === ""
-      ? `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${latitude},${longitude}&dt=${next4}`
-      : `https://api.weatherapi.com/v1/history.json?key=b95153893d2f41028ae105558242608&q=${city}&dt=${next4}`;
-  fetch(url4)
-    .then((res) => res.json())
-    .then((data) => {
-      loadFourthContainer(data);
-    })
-    .catch((rej) => console.log(rej));
-};
+//   if (nowDay - 3 <= 0) {
+//     if (nowMonth - 1 < 10) {
+//       next3 += nowYear + "-0" + (nowMonth - 1) + "-28";
+//     } else {
+//       next3 += nowYear + "-" + (nowMonth - 1) + "-28";
+//     }
+//   } else {
+//     if (nowMonth - 1 < 10) {
+//       next3 += nowYear + "-0" + (nowMonth - 1);
+//       if (nowDay < 10) {
+//         next3 += "-0" + (nowDay - 3);
+//       } else {
+//         next3 += "-" + (nowDay - 3);
+//       }
+//     } else {
+//       next3 += nowYear + "-" + (nowMonth - 10);
+//       if (nowDay < 10) {
+//         next3 += "-0" + (nowDay - 3);
+//       } else {
+//         next3 += "-" + (nowDay - 3);
+//       }
+//     }
+//   }
 
-const loadFourthContainer = (data) => {
-  currentTempC4 = data.forecast.forecastday[0].day.avgtemp_c;
-  currentTempF4 = data.forecast.forecastday[0].day.avgtemp_f;
-  currentWindKmph4 = data.forecast.forecastday[0].day.maxwind_kph;
-  currentWindMph4 = data.forecast.forecastday[0].day.maxwind_mph;
+//   if (nowDay - 4 <= 0) {
+//     if (nowMonth - 1 < 10) {
+//       next4 += nowYear + "-0" + (nowMonth - 1) + "-28";
+//     } else {
+//       next4 += nowYear + "-" + (nowMonth - 1) + "-28";
+//     }
+//   } else {
+//     if (nowMonth - 1 < 10) {
+//       next4 += nowYear + "-0" + (nowMonth - 1);
+//       if (nowDay < 10) {
+//         next4 += "-0" + (nowDay - 4);
+//       } else {
+//         next4 += "-" + (nowDay - 4);
+//       }
+//     } else {
+//       next4 += nowYear + "-" + (nowMonth - 10);
+//       if (nowDay < 10) {
+//         next4 += "-0" + (nowDay - 4);
+//       } else {
+//         next4 += "-" + (nowDay - 4);
+//       }
+//     }
+//   }
 
-  txtDate4.innerText = data.forecast.forecastday[0].date;
-  txtSecondaryTemperature4.innerHTML = currentTempC4 + "<sup>0</sup>c";
-  txtHumidity4.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
-  txtWindSpeed4.innerHTML = currentWindKmph4 + "<br/>kmph";
-};
-const loadThirdContainer = (data) => {
-  currentTempC3 = data.forecast.forecastday[0].day.avgtemp_c;
-  currentTempF3 = data.forecast.forecastday[0].day.avgtemp_f;
-  currentWindKmph3 = data.forecast.forecastday[0].day.maxwind_kph;
-  currentWindMph3 = data.forecast.forecastday[0].day.maxwind_mph;
+//   const url1 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next1}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next1}`;
+//   fetch(url1)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(data);
 
-  txtDate3.innerText = data.forecast.forecastday[0].date;
-  txtSecondaryTemperature3.innerHTML = currentTempC3 + "<sup>0</sup>c";
-  txtHumidity3.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
-  txtWindSpeed3.innerHTML = currentWindKmph3 + "<br/>kmph";
-};
-const loadSecondContainer = (data) => {
-  currentTempC2 = data.forecast.forecastday[0].day.avgtemp_c;
-  currentTempF2 = data.forecast.forecastday[0].day.avgtemp_f;
-  currentWindKmph2 = data.forecast.forecastday[0].day.maxwind_kph;
-  currentWindMph2 = data.forecast.forecastday[0].day.maxwind_mph;
+//       loadFirstContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url2 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next2}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next2}`;
+//   fetch(url2)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadSecondContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url3 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next3}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next3}`;
+//   fetch(url3)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadThirdContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+//   const url4 =
+//     city === ""
+//       ? `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${latitude},${longitude}&dt=${next4}`
+//       : `https://api.weatherapi.com/v1/history.json?key=e667369cab444fd791725742240210&q=${city}&dt=${next4}`;
+//   fetch(url4)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       loadFourthContainer(data);
+//     })
+//     .catch((rej) => console.log(rej));
+// };
 
-  txtDate2.innerText = data.forecast.forecastday[0].date;
-  txtSecondaryTemperature2.innerHTML = currentTempC2 + "<sup>0</sup>c";
-  txtHumidity2.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
-  txtWindSpeed2.innerHTML = currentWindKmph2 + "<br/>kmph";
-};
-const loadFirstContainer = (data) => {
-  currentTempC1 = data.forecast.forecastday[0].day.avgtemp_c;
-  currentTempF1 = data.forecast.forecastday[0].day.avgtemp_f;
-  currentWindKmph1 = data.forecast.forecastday[0].day.maxwind_kph;
-  currentWindMph1 = data.forecast.forecastday[0].day.maxwind_mph;
+// const loadFourthContainer = (data) => {
+//   currentTempC4 = data.forecast.forecastday[0].day.avgtemp_c;
+//   currentTempF4 = data.forecast.forecastday[0].day.avgtemp_f;
+//   currentWindKmph4 = data.forecast.forecastday[0].day.maxwind_kph;
+//   currentWindMph4 = data.forecast.forecastday[0].day.maxwind_mph;
 
-  txtDate1.innerText = data.forecast.forecastday[0].date;
-  txtSecondaryTemperature1.innerHTML = currentTempC1 + "<sup>0</sup>c";
-  txtHumidity1.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
-  txtWindSpeed1.innerHTML = currentWindKmph1 + "<br/>kmph";
-};
+//   txtDate4.innerText = data.forecast.forecastday[0].date;
+//   txtSecondaryTemperature4.innerHTML = currentTempC4 + "<sup>0</sup>c";
+//   txtHumidity4.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
+//   txtWindSpeed4.innerHTML = currentWindKmph4 + "<br/>kmph";
+// };
+// const loadThirdContainer = (data) => {
+//   currentTempC3 = data.forecast.forecastday[0].day.avgtemp_c;
+//   currentTempF3 = data.forecast.forecastday[0].day.avgtemp_f;
+//   currentWindKmph3 = data.forecast.forecastday[0].day.maxwind_kph;
+//   currentWindMph3 = data.forecast.forecastday[0].day.maxwind_mph;
+
+//   txtDate3.innerText = data.forecast.forecastday[0].date;
+//   txtSecondaryTemperature3.innerHTML = currentTempC3 + "<sup>0</sup>c";
+//   txtHumidity3.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
+//   txtWindSpeed3.innerHTML = currentWindKmph3 + "<br/>kmph";
+// };
+// const loadSecondContainer = (data) => {
+//   currentTempC2 = data.forecast.forecastday[0].day.avgtemp_c;
+//   currentTempF2 = data.forecast.forecastday[0].day.avgtemp_f;
+//   currentWindKmph2 = data.forecast.forecastday[0].day.maxwind_kph;
+//   currentWindMph2 = data.forecast.forecastday[0].day.maxwind_mph;
+
+//   txtDate2.innerText = data.forecast.forecastday[0].date;
+//   txtSecondaryTemperature2.innerHTML = currentTempC2 + "<sup>0</sup>c";
+//   txtHumidity2.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
+//   txtWindSpeed2.innerHTML = currentWindKmph2 + "<br/>kmph";
+// };
+// const loadFirstContainer = (data) => {
+//   currentTempC1 = data.forecast.forecastday[0].day.avgtemp_c;
+//   currentTempF1 = data.forecast.forecastday[0].day.avgtemp_f;
+//   currentWindKmph1 = data.forecast.forecastday[0].day.maxwind_kph;
+//   currentWindMph1 = data.forecast.forecastday[0].day.maxwind_mph;
+
+//   txtDate1.innerText = data.forecast.forecastday[0].date;
+//   txtSecondaryTemperature1.innerHTML = currentTempC1 + "<sup>0</sup>c";
+//   txtHumidity1.innerHTML = data.forecast.forecastday[0].day.avgtemp_c;
+//   txtWindSpeed1.innerHTML = currentWindKmph1 + "<br/>kmph";
+// };
 
 btnNextMonths.addEventListener("click", () => {
   isFutureMonths = true;
   isFutureDays = false;
-  isPastMonths - false;
+  isPastMonths = false;
   isPastdays = false;
 });
 
